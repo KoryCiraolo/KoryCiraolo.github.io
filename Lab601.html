@@ -42,6 +42,12 @@
     //run this when I click on this button
     $("#div_ctrl3").html("China Lake, California Clinic");
   });
+  
+  //toggle the photo on and off
+  $("#togglephoto").click(function() {
+    $("#photo").fadetoggle();
+  });
+                          
 });</script>
     
   </head>
@@ -97,6 +103,7 @@
     <img id = "znk" src = "KZ.jpg" />
     <p class = "caption"> Zand and Kiwi </p>
     <p class = "caption"> Photo by Author </p>
+      <button id="togglephoto">Toggle photo on/off.</button>
     </div>
     
   </body>
