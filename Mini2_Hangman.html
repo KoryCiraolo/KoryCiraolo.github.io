@@ -80,7 +80,7 @@
                       // replace the blanks with letter in blank
                       // and replace the letters with blanks in word
                       while (word.includes(letter)) {
-                      index = word.indexof(letter);
+                      index = word.indexOf(letter);
                       console.log("index of word is " + index);
                         word = word.substring(0, index) + " " + word.substring((index + 1));
                         blank = blank.substring(0, index) + letter + blank.substring((index + 1));
@@ -94,7 +94,7 @@
                       // check if the player has won the game
                       if (!blank.includes("-")) {
                         gameWon = true;
-                        $("#info").text("Congragulations! You guessed it!");
+                        $("#info").text("Congragulations! You guessed it!");}
 
 
                     }
