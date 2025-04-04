@@ -26,16 +26,16 @@
 </div>
 <div id = "map"></div>
 <script>
-var map = L.map('map').setView([39.421, -105.045], 13);
+var map = L.map('map').setView([39.70702, -105.08153], 13);
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
-var marker = L.marker([39.421, -105.045]).addTo(map);
+var marker = L.marker([39.70702, -105.08153]).addTo(map);
 
-var circle = L.circle([39.421, -105.045], {
+var circle = L.circle([39.70702, -105.08153], {
     color: 'red',
     fillColor: '#f03',
     fillOpacity: 0.5,
@@ -43,9 +43,12 @@ var circle = L.circle([39.421, -105.045], {
 }).addTo(map);
 
 var polygon = L.polygon([
-    [39.421, -105.045],
-    [39.421, -105.045],
-    [39.421, -105.045]
+    [39.71079, -105.08128],
+    [39.71081, -105.07247],
+    [39.70928, -105.07235],
+     [39.70912, -105.07498],
+     [39.70714, -105.07513],
+     [39.70720, -105.08123]
 ]).addTo(map);
 
 marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
@@ -53,7 +56,7 @@ circle.bindPopup("I am a circle.");
 polygon.bindPopup("I am a polygon.");
 
 var popup = L.popup()
-    .setLatLng([39.421, -105.045])
+    .setLatLng([39.70702, -105.08153])
     .setContent("I am a standalone popup.")
     .openOn(map);
 
