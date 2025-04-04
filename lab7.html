@@ -12,6 +12,7 @@
 #map { height: 500px; }
 h1 {text-alignment: center; font-size: 50px; font-family: arial;}
 h2 {text-alignment: center;font-size: 25px; font-family: arial;}
+#page {text-alignment: center;}
 </style>
 
 
@@ -52,13 +53,13 @@ var polygon = L.polygon([
      [39.70720, -105.08123]
 ]).addTo(map);
 
-marker.bindPopup("<b>Froyo Zone</b><br>my Favorite spot to get frozen yogurt.").openPopup();
+marker.bindPopup("<b>Froyo Zone</b><br>My favorite spot to get frozen yogurt.").openPopup();
 circle.bindPopup("Kountze Lake.");
 polygon.bindPopup("Belmar Plaza.");
 
 var popup = L.popup()
     .setLatLng([39.70702, -105.08153])
-    .setContent("Belmar Plaza.")
+    .setContent("Lakewood")
     .openOn(map);
 
 function onMapClick(e) {
