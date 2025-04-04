@@ -26,20 +26,20 @@
 </div>
 <div id = "map"></div>
 <script>
-var map = L.map('map').setView([39.70702, -105.08153], 13);
+var map = L.map('map').setView([39.70702, -105.08153], 10);
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
-var marker = L.marker([39.71058, -105.07709]).addTo(map);
+var marker = L.marker([39.70491, -105.08068]).addTo(map);
 
 var circle = L.circle([39.70433, -105.08720], {
-    color: 'red',
-    fillColor: '#f03',
+    color: 'green',
+    fillColor: '#7dd823',
     fillOpacity: 0.5,
-    radius: 100
+    radius: 150
 }).addTo(map);
 
 var polygon = L.polygon([
@@ -51,9 +51,9 @@ var polygon = L.polygon([
      [39.70720, -105.08123]
 ]).addTo(map);
 
-marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
-circle.bindPopup("I am a circle.");
-polygon.bindPopup("I am a polygon.");
+marker.bindPopup("<b>Froyo Zone</b><br>my Favorite spot to get frozen yogurt.").openPopup();
+circle.bindPopup("Kountze Lake.");
+polygon.bindPopup("Belmar Plaza.");
 
 var popup = L.popup()
     .setLatLng([39.70702, -105.08153])
