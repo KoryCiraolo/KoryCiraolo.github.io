@@ -62,16 +62,22 @@
 
 		// this is an object to keep track of our three basemaps -- ##2 here
 		var baseMaps = { "OpenStreetMap" : OSMTiles,
- "Humanitarian OSM" : HOTOSMTiles,
- "OpenTopoMap" : OpenTopoMap };
+				 "Humanitarian OSM" : HOTOSMTiles,
+				 "OpenTopoMap" : OpenTopoMap };
 
 		// the control let's the user turn on / off layers -- ##3 here
 		var layerControl = L.control.layers(baseMaps, null).addTo(map);
 
 		// let's add the Denver ACS data -- ##4 here
 		$.getJSON('./acs_denver_2021.geojson', function(data) {
-      //convert to layer
-      
+     		 //convert to layer
+     		 acsDenver2021Layer = L.geoJSON(data).addTo(map);
+
+		//move map to area of data
+		map.panTo(acsDenver2021Layer.getBounds().getCenter());
+
+		//add layer to latercontrol
+		layerControl.addOverlay(acsDenver2021Layer, "Census 2021");
     });
 
 		// let's try to add some remote DRCOG data
