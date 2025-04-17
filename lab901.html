@@ -70,14 +70,14 @@
 
     // define a function to stle choropleth map
     function style1(feature) {
-      d = feature.properties.PCT_POVERTY;
+      d = feature.properties.ENROLLED_IN_SCHOOL;
  answer = d > 30 ? '#800026' : 
- d > 20 ? '#DB0026 ' : 
- d > 15 ? '#E31A1C' : 
- d > 10 ? '#FC4E2A' : 
- d > 5 ? '#FD8D3C' : 
- d > 3 ? '#FEB24C' : 
- d > 1 ? '#FED976' : 
+ d > 20 ? '#f0f9e8 ' : 
+ d > 15 ? '#ccebc5' : 
+ d > 10 ? '#a8ddb5' : 
+ d > 5 ? '#7bccc4' : 
+ d > 3 ? '#43a2ca' : 
+ d > 1 ? '#0868ac' : 
  '#FFEDA0';
  styleReturn = {
  fillColor : answer,
@@ -97,9 +97,8 @@
      		 acsDenver2021Layer = L.geoJSON(data,
                                         {style:style1,
 					 onEachFeature : function(feature, layer) {
- layer.bindPopup("Percent Poverty: " + 
-feature.properties.PCT_POVERTY + "%");
-					}).addTo(map);
+			 layer.bindPopup("Enrolled in School: " + feature.properties.0868ac + "%");
+					 }}).addTo(map);
 
 		//move map to area of data
 		map.panTo(acsDenver2021Layer.getBounds().getCenter());
