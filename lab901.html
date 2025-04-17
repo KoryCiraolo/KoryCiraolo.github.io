@@ -97,7 +97,7 @@
      		 acsDenver2021Layer = L.geoJSON(data,
                                         {style:style1,
 					 onEachFeature : function(feature, layer) {
-			 layer.bindPopup("Enrolled in School: " + feature.properties.ENROLLED_IN_SCHOOL + "%");
+			 layer.bindPopup("Enrolled in School: " + feature.properties.ENROLLED_IN_SCHOOL + "students");
 					 }}).addTo(map);
 
 		//move map to area of data
